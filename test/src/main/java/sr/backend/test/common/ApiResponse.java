@@ -14,5 +14,9 @@ public record ApiResponse<T>(
     public static ApiResponse<Object> of(HttpStatus httpStatus, String defaultMessage) {
         return new ApiResponse<>(httpStatus.value(), defaultMessage);
     }
+
+    public static ApiResponse<Object> ok(String message) {
+        return new ApiResponse<>(200, message);
+    }
 }
 
